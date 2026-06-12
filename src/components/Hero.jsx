@@ -73,7 +73,7 @@ function Hero() {
             style={{ flex: 1, display: "flex", flexDirection: "column" }}
           >
 
-            {/* Status Badge
+            Status Badge
             <div
               style={{
                 display: "inline-flex",
@@ -99,7 +99,7 @@ function Hero() {
                 }}
               />
               Open to Work
-            </div> */}
+            </div>
 
             {/* Greeting */}
             <p style={{ color: "#94a3b8", fontSize: "16px", marginBottom: "8px" }}>
