@@ -73,7 +73,7 @@ function Hero() {
             style={{ flex: 1, display: "flex", flexDirection: "column" }}
           >
 
-            Status Badge
+            {/* Status Badge */}
             <div
               style={{
                 display: "inline-flex",
