@@ -5,13 +5,14 @@ function Experience() {
   return (
     <section
       id="experience"
+      className="section-padding"
       style={{
         backgroundColor: "#0f172a",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="Experience"
           title="Work Experience"
@@ -27,10 +28,13 @@ function Experience() {
             border: "1px solid #334155",
           }}
         >
-          <div className="flex flex-col md:flex-row gap-8">
+          <div
+            className="experience-layout"
+            style={{ display: "flex", gap: "32px" }}
+          >
 
             {/* Left — Meta */}
-            <div style={{ flexShrink: 0 }} className="md:w-52">
+            <div style={{ flexShrink: 0, minWidth: "180px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#64748b", fontSize: "13px", marginBottom: "8px" }}>
                 <FaCalendarAlt size={12} />
                 Feb 2026 – May 2026
@@ -65,7 +69,7 @@ function Experience() {
                 15-week program · Java & Python · AI-powered solutions
               </p>
 
-              <ul style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "14px", listStyle: "none", padding: 0 }}>
                 {[
                   "Completed a 15-week intensive Full Stack Development internship using Java and Python.",
                   "Built web applications integrating frontend UI with backend APIs and databases.",

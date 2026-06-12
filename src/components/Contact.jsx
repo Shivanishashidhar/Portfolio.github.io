@@ -5,13 +5,14 @@ function Contact() {
   return (
     <section
       id="contact"
+      className="section-padding"
       style={{
         backgroundColor: "#0b1120",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="Contact"
           title="Get In Touch"
@@ -44,12 +45,19 @@ function Contact() {
                 >
                   <Icon size={15} />
                 </div>
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <p style={{ color: "#64748b", fontSize: "12px", marginBottom: "2px" }}>{label}</p>
                   {href ? (
                     <a
                       href={href}
-                      style={{ color: "#e2e8f0", fontSize: "14px", fontWeight: 500, textDecoration: "none", transition: "color 0.2s" }}
+                      style={{
+                        color: "#e2e8f0",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        textDecoration: "none",
+                        transition: "color 0.2s",
+                        wordBreak: "break-all",
+                      }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "#a78bfa")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "#e2e8f0")}
                     >
@@ -68,7 +76,7 @@ function Contact() {
             <p style={{ color: "#64748b", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px" }}>
               Find me on
             </p>
-            <div style={{ display: "flex", gap: "12px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
               <a
                 href="https://github.com/Shivanishashidhar"
                 target="_blank"

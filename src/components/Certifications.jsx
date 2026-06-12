@@ -29,13 +29,14 @@ function Certifications() {
   return (
     <section
       id="certifications"
+      className="section-padding"
       style={{
         backgroundColor: "#0f172a",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="Certifications"
           title="Credentials & Learning"
@@ -49,6 +50,7 @@ function Certifications() {
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
+              className="cert-card"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -107,7 +109,11 @@ function Certifications() {
               </div>
 
               {/* External Link Icon */}
-              <FaExternalLinkAlt size={13} style={{ color: "#475569", flexShrink: 0, transition: "color 0.2s" }} />
+              <FaExternalLinkAlt
+                size={13}
+                className="cert-external-icon"
+                style={{ color: "#475569", flexShrink: 0, transition: "color 0.2s" }}
+              />
             </a>
           ))}
         </div>

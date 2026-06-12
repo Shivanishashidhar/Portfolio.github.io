@@ -47,13 +47,14 @@ function Skills() {
   return (
     <section
       id="skills"
+      className="section-padding"
       style={{
         backgroundColor: "#0b1120",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="Skills"
           title="What I Work With"

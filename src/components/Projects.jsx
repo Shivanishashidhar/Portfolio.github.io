@@ -32,13 +32,14 @@ function Projects() {
   return (
     <section
       id="projects"
+      className="section-padding"
       style={{
         backgroundColor: "#0b1120",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="Projects"
           title="What I've Built"
@@ -59,16 +60,19 @@ function Projects() {
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#475569")}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#334155")}
             >
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+              <div
+                className="project-layout"
+                style={{ display: "flex", gap: "24px" }}
+              >
                 {/* Number */}
-                <div style={{ flexShrink: 0 }} className="sm:w-12">
+                <div style={{ flexShrink: 0, width: "48px" }}>
                   <span style={{ fontSize: "28px", fontWeight: 700, color: "#334155" }}>
                     {project.number}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "16px", marginBottom: "12px" }}>
                     <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#fff", lineHeight: 1.4 }}>
                       {project.title}

@@ -3,8 +3,14 @@ import { FaBrain, FaCode, FaRocket, FaGraduationCap } from "react-icons/fa";
 /* ─── Reusable Section Header ────────────────────────────────────── */
 export function SectionHeader({ label, title, description, center }) {
   return (
-    <div style={{ marginBottom: "48px", maxWidth: center ? "600px" : "560px", textAlign: center ? "center" : "left" }}
-      className={center ? "mx-auto" : ""}
+    <div
+      style={{
+        marginBottom: "48px",
+        maxWidth: center ? "600px" : "560px",
+        textAlign: center ? "center" : "left",
+        marginLeft: center ? "auto" : undefined,
+        marginRight: center ? "auto" : undefined,
+      }}
     >
       <p style={{ color: "#a78bfa", fontSize: "13px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>
         {label}
@@ -44,19 +50,27 @@ function About() {
   return (
     <section
       id="about"
+      className="section-padding"
       style={{
         backgroundColor: "#0f172a",
         paddingTop: "96px",
         paddingBottom: "96px",
       }}
     >
-      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="section-inner" style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 24px" }}>
         <SectionHeader
           label="About Me"
           title="Who I Am"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div
+          className="about-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "48px",
+          }}
+        >
 
           {/* ── Left: Bio ── */}
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -120,7 +134,14 @@ function About() {
           </div>
 
           {/* ── Right: Highlight Cards ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div
+            className="highlights-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "16px",
+            }}
+          >
             {highlights.map(({ icon, label, desc }) => (
               <div
                 key={label}

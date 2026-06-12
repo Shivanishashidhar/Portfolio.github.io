@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div style={{ minHeight: "100vh", backgroundColor: "#0f172a" }}>
       <Navbar />
       <main>
         <Hero />
