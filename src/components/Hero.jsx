@@ -198,7 +198,7 @@ function Hero() {
                 View My Work
               </a>
               <a
-                href="/Shivani__Resume.pdf"
+                href="/Shivani_Resume_.pdf"
                 download
                 id="hero-download-resume-btn"
                 style={{

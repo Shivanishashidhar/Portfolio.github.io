@@ -110,7 +110,7 @@ function About() {
             </div>
 
             <a
-              href="/Shivani__Resume.pdf"
+              href="/Shivani_Resume_.pdf"
               download
               id="about-download-resume-btn"
               style={{
