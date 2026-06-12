@@ -2,28 +2,47 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-[#080d1a] border-t border-slate-800 py-10">
-      <div className="max-w-6xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer
+      style={{
+        backgroundColor: "#080d1a",
+        borderTop: "1px solid #1e293b",
+        padding: "40px 0",
+      }}
+    >
+      <div
+        className="footer-inner"
+        style={{
+          maxWidth: "1120px",
+          margin: "0 auto",
+          padding: "0 24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "24px",
+        }}
+      >
 
         {/* Left */}
         <div>
-          <p className="text-white font-bold text-base">
-            Shivani<span className="text-violet-400">.</span>
+          <p style={{ color: "white", fontWeight: 700, fontSize: "16px" }}>
+            Shivani<span style={{ color: "#a78bfa" }}>.</span>
           </p>
-          <p className="text-slate-500 text-xs mt-1">AI & Full Stack Developer · Bengaluru, India</p>
+          <p style={{ color: "#64748b", fontSize: "12px", marginTop: "4px" }}>
+            AI & Full Stack Developer · Bengaluru, India
+          </p>
         </div>
 
         {/* Center — copyright */}
-        <p className="text-slate-600 text-xs text-center">
+        <p style={{ color: "#475569", fontSize: "12px", textAlign: "center" }}>
           © 2026 Shivani Murshilli. All rights reserved.
         </p>
 
         {/* Right — socials */}
-        <div className="flex items-center gap-4">
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           {[
-            { href: "https://github.com/Shivanishashidhar", icon: <FaGithub className="w-4 h-4" />, label: "GitHub" },
-            { href: "https://www.linkedin.com/in/shivani-shashidhar-murshilli-7a8324354", icon: <FaLinkedin className="w-4 h-4" />, label: "LinkedIn" },
-            { href: "mailto:sshivanishashidhar@gmail.com", icon: <FaEnvelope className="w-4 h-4" />, label: "Email" },
+            { href: "https://github.com/Shivanishashidhar", icon: <FaGithub size={16} />, label: "GitHub" },
+            { href: "https://www.linkedin.com/in/shivani-shashidhar-murshilli-7a8324354", icon: <FaLinkedin size={16} />, label: "LinkedIn" },
+            { href: "mailto:sshivanishashidhar@gmail.com", icon: <FaEnvelope size={16} />, label: "Email" },
           ].map(({ href, icon, label }) => (
             <a
               key={label}
@@ -31,7 +50,12 @@ function Footer() {
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-slate-500 hover:text-slate-300 transition-colors"
+              style={{
+                color: "#64748b",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#cbd5e1")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#64748b")}
             >
               {icon}
             </a>

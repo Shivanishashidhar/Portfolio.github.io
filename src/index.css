@@ -1,7 +1,14 @@
+@import "tailwindcss";
+
+/* ── Base Reset ─────────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -15,4 +22,142 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #0f172a;
   color: white;
+  overflow-x: hidden;
+}
+
+/* ── Cursor blink animation for hero typewriter ─────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Responsive helpers (for things inline styles can't handle) ── */
+
+/* Hero section: stack vertically on small screens */
+@media (max-width: 1023px) {
+  .hero-grid {
+    flex-direction: column-reverse !important;
+    text-align: center;
+  }
+  .hero-text {
+    align-items: center;
+  }
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-buttons {
+    justify-content: center !important;
+  }
+  .hero-socials {
+    justify-content: center !important;
+  }
+  .hero-stats {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  .hero-photo-wrapper {
+    width: 220px !important;
+    height: 220px !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-photo-wrapper {
+    width: 260px !important;
+    height: 260px !important;
+  }
+}
+
+/* About section: single column on mobile */
+@media (max-width: 1023px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* About highlights: 2 columns on tablet+, 1 on small mobile */
+@media (max-width: 639px) {
+  .highlights-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Experience card: stack on mobile */
+@media (max-width: 767px) {
+  .experience-layout {
+    flex-direction: column !important;
+  }
+}
+
+/* Projects card: stack on mobile */
+@media (max-width: 639px) {
+  .project-layout {
+    flex-direction: column !important;
+  }
+}
+
+/* Certifications card: stack on small mobile */
+@media (max-width: 639px) {
+  .cert-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .cert-card .cert-external-icon {
+    align-self: flex-end;
+  }
+}
+
+/* Footer responsive */
+@media (max-width: 639px) {
+  .footer-inner {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
+
+/* Navbar desktop links: hide on mobile */
+@media (max-width: 767px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-desktop-links {
+    display: flex !important;
+  }
+  .nav-hamburger {
+    display: none !important;
+  }
+  .nav-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Section padding adjustments for mobile */
+@media (max-width: 639px) {
+  .section-padding {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+  .section-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }

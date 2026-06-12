@@ -38,6 +38,7 @@ function Hero() {
   return (
     <section
       id="hero"
+      className="section-padding"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -49,6 +50,7 @@ function Hero() {
       }}
     >
       <div
+        className="section-inner"
         style={{
           maxWidth: "1120px",
           margin: "0 auto",
@@ -56,10 +58,20 @@ function Hero() {
           width: "100%",
         }}
       >
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div
+          className="hero-grid"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "48px",
+          }}
+        >
 
           {/* ── Text Side ── */}
-          <div className="flex-1 text-center lg:text-left">
+          <div
+            className="hero-text"
+            style={{ flex: 1, display: "flex", flexDirection: "column" }}
+          >
 
             {/* Status Badge */}
             <div
@@ -75,6 +87,7 @@ function Hero() {
                 fontSize: "13px",
                 fontWeight: 500,
                 marginBottom: "28px",
+                width: "fit-content",
               }}
             >
               <span
@@ -96,7 +109,7 @@ function Hero() {
             {/* Name */}
             <h1
               style={{
-                fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+                fontSize: "clamp(2rem, 5vw, 3.5rem)",
                 fontWeight: 800,
                 color: "#ffffff",
                 lineHeight: 1.1,
@@ -134,6 +147,7 @@ function Hero() {
 
             {/* Description */}
             <p
+              className="hero-description"
               style={{
                 color: "#94a3b8",
                 fontSize: "16px",
@@ -141,7 +155,6 @@ function Hero() {
                 maxWidth: "480px",
                 marginBottom: "32px",
               }}
-              className="mx-auto lg:mx-0"
             >
               A passionate fresher specializing in AI &amp; Full Stack Development.
               I build intelligent applications that solve real-world problems.
@@ -149,13 +162,13 @@ function Hero() {
 
             {/* CTA Buttons */}
             <div
+              className="hero-buttons"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "12px",
                 marginBottom: "32px",
               }}
-              className="justify-center lg:justify-start"
             >
               <a
                 href="#projects"
@@ -218,8 +231,8 @@ function Hero() {
 
             {/* Social Links */}
             <div
+              className="hero-socials"
               style={{ display: "flex", alignItems: "center", gap: "20px" }}
-              className="justify-center lg:justify-start"
             >
               <a
                 href="https://github.com/Shivanishashidhar"
@@ -265,6 +278,7 @@ function Hero() {
           {/* ── Photo Side ── */}
           <div style={{ flexShrink: 0 }}>
             <div
+              className="hero-photo-wrapper"
               style={{
                 width: "280px",
                 height: "280px",
@@ -272,7 +286,6 @@ function Hero() {
                 padding: "3px",
                 background: "linear-gradient(135deg, #7c3aed, #a78bfa, #c084fc)",
               }}
-              className="w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px]"
             >
               <div
                 style={{
@@ -300,6 +313,7 @@ function Hero() {
 
         {/* ── Stats Row ── */}
         <div
+          className="hero-stats"
           style={{
             marginTop: "64px",
             paddingTop: "32px",
@@ -309,7 +323,6 @@ function Hero() {
             gap: "24px",
             maxWidth: "360px",
           }}
-          className="mx-auto lg:mx-0 text-center lg:text-left"
         >
           {[
             { value: "2+", label: "Projects Built" },

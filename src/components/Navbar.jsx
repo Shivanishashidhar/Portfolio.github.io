@@ -20,6 +20,15 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <nav
       id="navbar"
@@ -52,7 +61,10 @@ function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "32px" }} className="hidden md:flex">
+        <div
+          className="nav-desktop-links"
+          style={{ display: "flex", alignItems: "center", gap: "32px" }}
+        >
           {navLinks.map(({ label, href }) => (
             <a
               key={label}
@@ -93,8 +105,9 @@ function Navbar() {
         <button
           id="navbar-hamburger-btn"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden"
+          className="nav-hamburger"
           style={{
+            display: "none",
             background: "none",
             border: "none",
             color: "#94a3b8",
@@ -110,7 +123,7 @@ function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div
-          className="md:hidden"
+          className="nav-mobile-menu"
           style={{
             backgroundColor: "#0f172a",
             borderTop: "1px solid #1e293b",
